@@ -6,40 +6,27 @@ public class boxPuzzleTrigger : MonoBehaviour
 {
     public int boxPuzzle = 0;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void OnTriggerEnter(Collider box)
+    void OnTriggerEnter(Collider box) //When the box enters the correct space (measured by a trigger box) increase puzzle completion
     {
 
         if (box.isTrigger == true && box.CompareTag("boxPuzzleTrigger"))
         {
-            
+             //test is the name of the object that 'reacts' to the puzzle completion
             GameObject completePuzzle = GameObject.Find("test");
             boxPuzzleFinish testing = completePuzzle.GetComponent<boxPuzzleFinish>();
             testing.puzzleCompletion += 1;
             
         }
 
-
-
-
     }
-    void OnTriggerExit(Collider box)
+    void OnTriggerExit(Collider box) //When box is no loger in position remove 'puzzleCompletion'
     {
 
         if (box.isTrigger == true && box.CompareTag("boxPuzzleTrigger"))
         {
             
             GameObject completePuzzle = GameObject.Find("test");
+           
             boxPuzzleFinish testing = completePuzzle.GetComponent<boxPuzzleFinish>();
             testing.puzzleCompletion -= 1;
 
