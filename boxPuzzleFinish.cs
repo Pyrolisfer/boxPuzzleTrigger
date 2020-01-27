@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class boxPuzzleFinish : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public int puzzleCompletion = 0;
-   
-    void Start()
-    {
-        
-    }
+ 
 
-    // Update is called once per frame
+    
     void Update()
     {
         Debug.Log(puzzleCompletion);
 
-        if(puzzleCompletion == 3)
+        if(puzzleCompletion == 3)//when all 3 boxes are in position
         {
             Debug.Log("puzzlecomplete");
+            //this can trigger the a door opening...
         }
     }
    
